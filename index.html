@@ -337,7 +337,7 @@ one round can read k concepts when budget / cost per result / k >= C(k)</div>
     }
     $('card').addEventListener('click', () => {
       if (!last) return; const { v, rows, results, solid } = last;
-      makeCard({ file: 'creative-volume-reality', kicker: 'Creative volume reality', headline: solid.k >= 2 ? `${solid.k} concepts.` : 'not even two.', hl: solid.k < v.n, big: solid.k >= 2 ? `not ${v.n} at once` : 'test bolder, or fund it',
+      makeCard({ file: 'creative-volume-reality', kicker: 'Creative volume reality', headline: solid.k >= 2 ? `${solid.k} concepts.` : 'not even two.', hl: solid.k < v.n, big: solid.k >= v.n ? `all ${v.n} at once` : (solid.k >= 2 ? `not ${v.n} at once` : 'test bolder, or fund it'),
         lines: [`${money(v.bud)} at ${money(v.cpa)} a result`, `About ${Math.round(results)} results in a round`, ...rows.map((r) => `${r.L.name}: ${r.k >= 2 ? r.k + ' concepts' : 'none'}`).slice(0, 2)],
         foot: 'Even split assumed. Platforms rarely deliver one.' });
     });
